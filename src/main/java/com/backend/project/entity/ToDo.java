@@ -7,7 +7,7 @@ import java.time.LocalTime;
 
 @Entity
 @Table(
-        name = "user"
+        name = "todos"
 )
 @Data
 @NoArgsConstructor
@@ -30,5 +30,9 @@ public class ToDo {
 
     @Column(name = "finished_time")
     private LocalTime finishedTime;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }
